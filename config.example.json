@@ -1,0 +1,30 @@
+{
+  "workspaceName": "Microdemo",
+  "workspaceId": "YOUR_RAINFROG_WORKSPACE_ID",
+  "productWorkspaceName": "Microdemo",
+  "productWorkspaceId": "YOUR_RAINFROG_WORKSPACE_ID",
+  "nativeTemplates": {
+    "still_life": {
+      "id": "3a7cd1d1-e6c2-4885-96d0-b78d5485f55e",
+      "name": "Product Still Life"
+    },
+    "fashion": {
+      "id": "36d57089-806a-4c71-ab49-4d3c22202a9c",
+      "name": "Fashion Shooting"
+    }
+  },
+  "rainfrogMcpUrl": "https://mcp.rainfrog.ai/mcp",
+  "port": 4318,
+  "defaultProducts": 3,
+  "defaultStyle": "Line Gobo No Back",
+  "defaultStyleId": "cmrc7o64n000911beteqo4o6j",
+  "defaultAspectRatio": "3:4",
+  "defaultResolution": "2K",
+  "pezzoBriefPath": "PEZZO_BRIEF.md",
+  "requireInstagramResearch": true,
+  "approvalMode": "standing-grants",
+  "defaultShootType": "still_life",
+  "defaultMaxCredits": 270,
+  "codexPath": "",
+  "stepTimeoutMinutes": 15
+}

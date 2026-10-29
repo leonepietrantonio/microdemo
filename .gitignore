@@ -1,0 +1,20 @@
+# Local runtime, account state and generated media
+/data/
+/node_modules/
+/config.json
+.env
+.env.*
+!.env.example
+*.log
+*.pem
+*.key
+.DS_Store
+
+# Local diagnostics and historical repair notes
+/verification.json
+/APPROVAL_RENEWAL_EVIDENCE.json
+/MCP_INTEGRATION_CHECK.json
+/MCP_APPROVAL_RENEWAL_FIX.md
+/MCP_STANDING_ACCESS_FIX.md
+/RAINFROG_MCP_FIXES.md
+/docs/local-history.md

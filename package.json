@@ -1,0 +1,19 @@
+{
+  "name": "rainfrog-microdemo",
+  "version": "0.9.0",
+  "private": true,
+  "type": "module",
+  "description": "Local Rainfrog batch studio with sequential per-brand execution, powered by your authenticated Codex CLI",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test",
+    "demo": "node server.mjs --simulate",
+    "check:instagram": "node scripts/check-instagram.mjs"
+  },
+  "dependencies": {
+    "playwright": "^1.64.1"
+  }
+}

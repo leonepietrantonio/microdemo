@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Microdemo — Rainfrog batch studio</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+  <aside class="sidebar">
+    <a class="wordmark" href="/" aria-label="Microdemo home"><span class="brand-dot">↗</span>microdemo<span class="version">01</span></a>
+    <div class="workspace"><span class="tiny">RAINFROG WORKSPACE</span><strong><i class="status-dot"></i>Microdemo</strong><span>One brand at a time.</span></div>
+    <nav><a class="selected" href="#import"><span>◫</span> Batch studio <small>01</small></a><a href="#batches"><span>↳</span> Runs & outputs</a><a href="#activity"><span>≋</span> Activity</a></nav>
+    <div class="sidebar-bottom"><span class="tiny">RUNS ON YOUR MAC</span><p>Research → Canvas → Generate → Download</p><span class="local-indicator"><i></i> Local session</span></div>
+  </aside>
+  <main>
+    <header><span>CREATIVE OPERATIONS / LOCAL DEMO</span><div class="header-right"><span id="mode">LIVE MODE</span><span class="separator">/</span><span id="clock"></span></div></header>
+    <div class="intro"><div><div class="eyebrow">MICRODEMO / BATCH STUDIO</div><h1>Make your next campaign.</h1><p>Upload your brand list. Each brand is finished before the next begins.</p></div></div>
+    <section class="panel access-card" id="permissions-panel" data-tone="neutral" aria-labelledby="permissions-title" aria-busy="false">
+      <div class="access-heading"><span id="access-icon" class="access-icon" aria-hidden="true">↗</span><div><span class="tiny">01 / RAINFROG ACCESS</span><h2 id="permissions-title">Connect your studio</h2></div><span id="access-badge" class="access-badge">Not connected</span></div>
+      <div class="access-result" role="status" aria-live="polite" aria-atomic="true"><p id="permissions-detail">Enable editing and generation for automatic batches.</p><p id="access-note">Your batch credit limit still applies.</p></div>
+      <div id="permissions-values" class="access-permissions"></div>
+      <div class="access-bottom"><button id="access-action" class="button primary">Enable automatic access</button><span id="permission-gate">Complete access setup to start a batch.</span></div>
+      <details class="access-technical"><summary>Technical details</summary><p id="access-technical-text"></p><p id="access-checked-at"></p></details>
+    </section>
+    <details class="panel support-panel"><summary>Instagram sign-in <span>Only if requested during research</span></summary><p>Research uses a dedicated browser. If Instagram requests sign-in, open it here and sign in, then resume your batch.</p><button id="open-instagram" class="button secondary compact">Open Instagram browser ↗</button></details>
+    <section class="panel brief-panel" id="pezzo-brief">
+      <details><summary><span><span class="tiny">PEZZO / CREATIVE DIRECTION</span><strong>Edit the Pezzo brief</strong></span><span>↗</span></summary>
+        <p class="helper">Every new visual combines this guidance with the brand's researched identity. Save changes here or edit the Markdown file directly. Each brand captures the latest brief when preparation starts; quoted and approved sets keep their saved version.</p>
+        <label for="pezzo-editor" class="tiny">EDITABLE PEZZO BRIEF</label>
+        <textarea id="pezzo-editor" rows="20" spellcheck="true" aria-label="Pezzo brief"></textarea>
+        <div class="brief-actions"><button id="save-brief" class="button primary compact">Save brief</button><button id="reload-brief" class="button secondary compact">Reload from disk</button><span id="brief-status" class="subtle" role="status">Loading brief…</span></div>
+        <p id="brief-path" class="helper"></p>
+      </details>
+    </section>
+    <section id="import" class="import-grid">
+      <div class="panel import-panel"><div class="section-heading"><div><span class="tiny">01 / INPUT</span><h2>Your brand list</h2></div><span class="pill">CSV</span></div>
+        <label class="dropzone" id="dropzone" for="csv-file"><span class="upload-mark">↑</span><strong>Drop your brand list here</strong><span>or click to choose a CSV · no brand-count limit</span><input id="csv-file" type="file" accept=".csv,text/csv" hidden></label>
+        <div class="sample-links"><a href="/sample.csv" download>↓ Blank CSV</a><a href="/example.csv" download>↓ Example CSV</a><button id="edit-toggle" class="text-button">Paste or edit CSV</button></div>
+        <div id="editor-wrap" hidden><label for="csv-editor" class="tiny">CSV CONTENT</label><textarea id="csv-editor" rows="7" spellcheck="false" placeholder="brand_name,instagram_url,website_url"></textarea><button id="validate" class="button secondary compact">Validate list</button></div>
+        <div id="file-label" class="file-label">No CSV selected yet</div><div id="brand-preview"></div><p id="csv-error" class="error" role="alert"></p>
+      </div>
+      <div class="panel settings-panel"><div class="section-heading"><div><span class="tiny">02 / DIRECTION</span><h2>A considered starting point</h2></div></div>
+        <div class="setting-row"><span>Workspace</span><strong id="project-destination">Microdemo</strong></div><span id="product-destination" hidden></span><div class="setting-row"><span>Default shoot</span><strong>Product still life</strong></div><div class="setting-row"><span>Style</span><strong id="style-choice">Line Gobo No Back</strong></div><div class="setting-row"><span>Output</span><strong id="output-choice">3:4 / 2K</strong></div>
+        <label class="budget-label" for="budget">Batch credit limit <span>All brands in this CSV</span></label><div class="budget-input"><input id="budget" type="number" min="1" step="1" value="270"><span>credits</span></div>
+        <p class="helper">Research → prepare → generate → download, then the next brand. Up to 6 reference photos per product.</p>
+        <button id="create" class="button primary" disabled>Create batch <span>↗</span></button><p class="under-button">The suggested limit assumes 30 credits per visual. Actual quotes are checked before each brand. Creating a batch saves your list; start it below.</p>
+      </div>
+    </section>
+    <section id="batches" class="runs-section"><div class="section-heading"><div><span class="tiny">03 / EXECUTION</span><h2>Runs & outputs</h2></div><span class="subtle" id="batch-count">No runs yet</span></div><div id="batch-list"><div class="empty-state"><span>↳</span><strong>A space for what comes next.</strong><p>Your batches and finished visuals will appear here.</p></div></div></section>
+    <details id="activity" class="panel activity-panel"><summary>Activity log <span id="worker-state" class="pill">Idle</span></summary><div id="logs" class="log-list"><p class="subtle">No activity yet.</p></div></details>
+    <footer><span>MICRODEMO / RAINFROG</span><span id="output-root">Outputs stay on this Mac.</span></footer>
+  </main><div id="toast" role="status" hidden></div><script type="module" src="/app.js"></script>
+</body></html>
